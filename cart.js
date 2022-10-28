@@ -35,7 +35,10 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+
+const summedPrice = cart.reduce((acc, curr) => acc + curr['price'], 0)
+
+// console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +57,8 @@ const cart = [
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * (1 + tax)) - couponValue
+// console.log(calcFinalPrice(20.99, 5, .09))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,6 +83,23 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+NOTE I am unclear as to if this is general customer info we are talking about or specifically info we would need from a customer when they are checking out in the cart. 
+I am going to assume its the cart one, but if im wrong pls forgive me.
+
+name -string- genereal info which can easily be used to identify the user
+email-string-  for order summary and receipt
+phone -num- to get in contact with them should the need arrise
+birthday -string- for birthday promos/discounts (this could just be tired to their account and the system could just do a check if it is that day at check out, if it is display 
+    the option for a birthday coupon or gift)
+card info -array-
+    card type -string- like visa or mastercard
+    number -num- for checkout
+    card exp date -num? or array with two indexes for month and year- for check out again
+    card special pin -num-  again for checkout
+address - if food is being delivered
+car brand -string- if its parking lot pick up curbside pick up
+car color - string - ^^^^
+
 
 */
 
@@ -88,3 +109,15 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: "Alyssa",
+    email: "alyssa.black141@gmail.com",
+    phone: 8009117222, //not a real number.... obviously
+    DOB: "January 13th", //year isn't nes because this is just for promo, you could take it tho (i suppose...)
+    cardInfo: ['VISA', 4024007175655140, [8,2026], 815], //all fake. pls dont try to use this stuff
+    address: "1200 Mason St, San Francisco, CA, 94108",
+    carBrand: 'subaru',
+    carColor: 'white'
+}
+
+// console.log(customer.cardInfo[1])
