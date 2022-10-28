@@ -36,8 +36,8 @@ const pizza = {
     name: 'Stuffed Combo',
     price: 12.99, 
     catagory: "entree",
-    popularity: 70,
-    rating: 3,
+    popularity: 70, //out of 100
+    rating: 3, //out of 5
     tags: ['family','italian sausage','stuffed crust']
 }
 
