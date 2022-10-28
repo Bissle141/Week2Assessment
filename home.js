@@ -22,8 +22,9 @@
 */
 
 //CODE HERE
+const greetUser = (username) => `Welcome back ${username}!`
 
-
+// console.log(greetUser("Alyssa"))
 
 
 
@@ -51,27 +52,42 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+const canWeDeliver = (zip) => {
+    if (deliveryAreaZipCodes.includes(zip)){
+        return `You're in our delivery zone!`
+    } else {
+        return `Sorry, we can't deliver to that address`
+    }
+}
 
 
 /* 
-    Problem 2 Continued
+Problem 2 Continued
 
-    Now you're going to rewrite your function.
+Now you're going to rewrite your function.
 
-    If you wrote `canWeDeliver` using a loop of
-    some kind, write a new function (`canWeDeliverTwo`)
-    below, using the `includes` array method. 
-    Look it up on MDN if you're not sure how to use 
-    it. 
+If you wrote `canWeDeliver` using a loop of
+some kind, write a new function (`canWeDeliverTwo`)
+below, using the `includes` array method. 
+Look it up on MDN if you're not sure how to use 
+it. 
 
-    If you already used the `includes` method, 
-    write a new function using some sort of 
-    loop (for loop, higher order array method).
-    Name your new function `canWeDeliverTwo`.
+If you already used the `includes` method, 
+write a new function using some sort of 
+loop (for loop, higher order array method).
+Name your new function `canWeDeliverTwo`.
 */
 
 // CODE HERE
-
+const canWeDeliverTwo = (zip) => {
+    for(i=0;i<deliveryAreaZipCodes.length;i++){
+        if (deliveryAreaZipCodes[i] === zip){
+            return `You're in our delivery zone!`
+        }
+    }
+    return `Sorry, we can't deliver to that address`
+}
+// console.log(canWeDeliverTwo(95205))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -108,6 +124,8 @@ const deals = [
 
 //CODE HERE
 
+deals[0].title = deals[0].title.replace(15, 10)
+// console.log(deals[0].title)
 
 
 /*
@@ -124,3 +142,5 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+// console.log(deals[1].desc)
