@@ -57,8 +57,8 @@ const summedPrice = cart.reduce((acc, curr) => acc + curr['price'], 0)
 */
 
 //CODE HERE
-const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * (1 + tax)) - couponValue
-// console.log(calcFinalPrice(20.99, 5, .09))
+const calcFinalPrice = (cartTotal, couponValue, tax) => ((cartTotal * (1 + tax)) - couponValue).toFixed(2)
+// console.log(calcFinalPrice(summedPrice, 5, .06))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -120,4 +120,4 @@ const customer = {
     carColor: 'white'
 }
 
-// console.log(customer.cardInfo[1])
+// console.log(customer)

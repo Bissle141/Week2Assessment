@@ -71,8 +71,8 @@ console.log(pizza.tags[1])
 */
 
 //CODE HERE
-let {price: priceVar} = pizza
-console.log(priceVar)
+let {price} = pizza
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -151,7 +151,7 @@ let foodArray = [
 //CODE HERE
 const containsTag = (tag, callback) => callback(foodArray.filter(el => el.tags.includes(tag)))
 
-// containsTag('kids', items => console.log(items))
+// containsTag('classic', items => console.log(items)) // invokation, commented out to keep terminal clear
 
 
 
@@ -216,4 +216,4 @@ const filterByProperty = (property, number, type) => {
 */
 
 //CODE HERE
-console.log(filterByProperty('rating', 4.8, 'above'))
+console.log(filterByProperty('popularity', 80, 'above'))

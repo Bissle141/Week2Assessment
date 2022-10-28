@@ -58,7 +58,7 @@ class Ticket {
 
 //CODE HERE
 let firstTicket = new Ticket(['pizza', 'bread', 'soda'], '7:03 PM', 575)
-// console.log(firstTicket)
+console.log(firstTicket)
 
 /*
     Call the `updateStatus` method on

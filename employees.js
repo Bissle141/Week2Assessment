@@ -68,7 +68,7 @@ empOne.getSchedule()
 
 //CODE HERE
 let empTwo = {...empOne, 'name': 'Nick'}
-// console.log(empTwo)
+console.log(empTwo)
 
 
 //////////////////PROBLEM 2////////////////////
