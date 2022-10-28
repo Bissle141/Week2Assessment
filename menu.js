@@ -32,6 +32,14 @@
 
 //CODE HERE
 
+const pizza = {
+    name: 'Stuffed Combo',
+    price: 12.99, 
+    catagory: "entree",
+    popularity: 70,
+    rating: 3,
+    tags: ['family','italian sausage','stuffed crust']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +51,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +71,8 @@
 */
 
 //CODE HERE
-
+let {price: priceVar} = pizza
+console.log(priceVar)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+let {catagory:catagoryVar} = pizza
+console.log(catagoryVar)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +99,42 @@
 
 //CODE HERE
 
+let foodArray = [
+    {name: 'margherita',
+    price: 15.99, 
+    catagory: "entree",
+    popularity: 79,
+    rating: 4.5,
+    tags: ['specialty','italian sausage','balsamic drizzle', "glutenfree options"]},
+    
+    {name: 'cheese',
+    price: 10.99, 
+    catagory: "entree",
+    popularity: 85,
+    rating: 4.8,
+    tags: ['classic','vegitarian','kids', 'family']},
+    
+    {name: 'meatlovers',
+    price: 16.99, 
+    catagory: "entree",
+    popularity: 79,
+    rating: 4.5,
+    tags: ['classic','italian sausage','peporoni', 'salami', 'ham']},
 
+    {name: 'house salad',
+    price: 11.99, 
+    catagory: "appitizer",
+    popularity: 60,
+    rating: 4.2,
+    tags: ['vegan options','vegitarian','specialty']},
+    
+    {name: 'breadstix',
+    price: 7.99, 
+    catagory: "starter",
+    popularity: 89,
+    rating: 4.9,
+    tags: ['specialty','classic','vegitarian']},
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -104,8 +149,9 @@
 */
 
 //CODE HERE
+const containsTag = (tag, callback) => callback(foodArray.filter(el => el.tags.includes(tag)))
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+// containsTag('kids', items => console.log(items))
 
 
 
@@ -150,6 +196,17 @@
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    let filteredArr = []
+    if (type === 'above'){
+        filteredArr = foodArray.filter(el => number <= el[property])
+    } else if (type === 'below'){
+        filteredArr = foodArray.filter(el => number >= el[property])
+    }
+    return filteredArr;
+}
+
+//I added the equal too part despite it not being spesified because when i'm searching for sood and i slecet a filter i wanna see everything that meets the req, including the options that are only just meeting it
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +216,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 4.8, 'above'))
